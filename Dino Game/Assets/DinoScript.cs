@@ -22,4 +22,15 @@ public class DinoScript : MonoBehaviour
             myRigidBody.velocity = Vector2.up * jumpHeight;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "cactus")
+        {
+            // game over screen
+            dinoIsAlive = false;
+            Debug.Log("game over");
+        }
+    }
 }
