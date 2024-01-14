@@ -7,11 +7,12 @@ public class DinoScript : MonoBehaviour
     public Rigidbody2D myRigidBody;
     public bool dinoIsAlive = true;
     public float jumpHeight;
+    public LogicScript logic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class DinoScript : MonoBehaviour
         {
             // game over screen
             dinoIsAlive = false;
+            logic.gameOver();
             Debug.Log("game over");
         }
     }
