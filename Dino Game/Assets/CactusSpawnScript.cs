@@ -5,12 +5,14 @@ using UnityEngine;
 public class CactusSpawnScript : MonoBehaviour
 {
     public GameObject cactus;
-    public float spawnRate = 2;
+    private float spawnRate = 4;
     private float timer = 0;
+    public LogicScript logic;
 
     // Start is called before the first frame update
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         spawnCactus();
     }
 
@@ -25,6 +27,22 @@ public class CactusSpawnScript : MonoBehaviour
         {
             spawnCactus();
             timer = 0;
+        }
+
+        // Changing difficulty of the game
+
+        if (logic.score < 50) {}
+        else if (logic.score >= 50 && logic.score < 100)
+        {
+            spawnRate = 3;
+        }
+        else if (logic.score >= 100 && logic.score < 250)
+        {
+            spawnRate = 2;
+        }
+        else
+        {
+            spawnRate = 1;
         }
     }
 
