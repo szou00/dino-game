@@ -26,6 +26,7 @@ public class CloudSpawnScript : MonoBehaviour
         {
             spawnCloud();
             timer = 0;
+            spawnRate = Random.Range(3, 8);
         }
     }
 
