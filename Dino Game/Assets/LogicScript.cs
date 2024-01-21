@@ -13,11 +13,13 @@ public class LogicScript : MonoBehaviour
     public float scoreIncreaseRate = 0.25f;
     private float timer = 0;
     public GameObject gameOverScreen;
+    public AudioSource gameOverSFX;
 
     void Start()
     {
         highScore = PlayerPrefs.GetInt("High Score", 0);
         highScoreText.text = highScore.ToString();
+        gameOverSFX.volume *= .25f;
     }
 
     void Update()
@@ -60,6 +62,8 @@ public class LogicScript : MonoBehaviour
     {
         Time.timeScale = 0;
         setHighScore();
+        gameOverSFX.Play();
         gameOverScreen.SetActive(true);
+        
     }
 }

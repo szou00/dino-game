@@ -9,6 +9,7 @@ public class DinoScript : MonoBehaviour
     public float jumpHeight;
     public bool dinoInAir;
     public LogicScript logic;
+    public AudioSource dinoSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class DinoScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && dinoIsAlive && !dinoInAir)
         {
+            dinoSFX.Play();
             dinoInAir = true;
             myRigidBody.velocity = Vector2.up * jumpHeight;
         }
