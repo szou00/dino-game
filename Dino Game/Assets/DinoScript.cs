@@ -7,6 +7,7 @@ public class DinoScript : MonoBehaviour
     public Rigidbody2D myRigidBody;
     public bool dinoIsAlive = true;
     public float jumpHeight;
+    public bool dinoInAir;
     public LogicScript logic;
 
     // Start is called before the first frame update
@@ -18,8 +19,9 @@ public class DinoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dinoIsAlive)
+        if (Input.GetKeyDown(KeyCode.Space) && dinoIsAlive && !dinoInAir)
         {
+            dinoInAir = true;
             myRigidBody.velocity = Vector2.up * jumpHeight;
         }
     }
@@ -33,6 +35,10 @@ public class DinoScript : MonoBehaviour
             dinoIsAlive = false;
             logic.gameOver();
             Debug.Log("game over");
+        }
+        if (collision.gameObject.tag == "ground")
+        {
+            dinoInAir = false;
         }
     }
 }
