@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 1657679957}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2112,6 +2112,7 @@ MonoBehaviour:
   myRigidBody: {fileID: 1844121867}
   dinoIsAlive: 1
   jumpHeight: 14
+  dinoInAir: 0
   logic: {fileID: 1662824368}
 --- !u!1 &1986318242
 GameObject:
