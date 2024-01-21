@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cactus: {fileID: 2465739872969839765, guid: ddc71081a882b41e38f2aa09874908a7, type: 3}
-  spawnRate: 2
+  logic: {fileID: 0}
 --- !u!4 &198614041
 Transform:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.66522783, g: 0.7518002, b: 0.9339623, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
